@@ -1,4 +1,4 @@
-## 理工自动打卡助手
+## 理工自动打卡助手（没有人用不分享了）
 
 这是基于js语言的项目
 
@@ -18,9 +18,9 @@
 
 这是个文件，打赏随意，谢谢支持~~~
 
-链接: https://share.weiyun.com/C8Av7vpu 密码：rsxv3d
+链接: https://share.weiyun.com/C8Av7vpu 
 
-链接: https://pan.baidu.com/s/1FRJrpWQnawXjPE3kb8KH9Q  提取码:l8p9
+链接: https://pan.baidu.com/s/1FRJrpWQnawXjPE3kb8KH9Q  
 
 ## 大神自己看代码吧
 
