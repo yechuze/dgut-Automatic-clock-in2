@@ -8,6 +8,9 @@
 
 `Settings`-`Secrets`里面添加`USERNAME`,`PASSWORD`,`SCKEY`值对应为你的`学号（例如：202011111111）`,`密码`,`server酱的key（详情百度server酱）用于接收通知`
 
+### 手动运行一次
+update一下`readme.md`文件或者进入到`Actions`-`Workflows`页面，手动运行一次  
+
 ### 其他
 老用户请自行更新Keys.json文件里面的内容（6月22日紧急修复）
 
