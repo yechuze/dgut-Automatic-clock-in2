@@ -1,322 +1,104 @@
-const { readFile } = require('fs');
-const { HttpRequest } = require('./node/HttpRequest');
-
-const { USERNAME, PASSWORD, SCKEY } = process.env;
-/* 身份验证信息 */
-let Cookie = 'languageIndex=0; ',
-    __token__ = '',
-    authorization = 'Bearer ';
-/* 请求头 */
-const
-    YQFK_HOST = 'https://yqfk.dgut.edu.cn',
-    CAS_HOST = 'https://cas.dgut.edu.cn',
-    LOGIN_PAGE = CAS_HOST + '/home/Oauth/getToken/appid/illnessProtectionHome/state/home.html',
-    Headers = {
-        CHROME: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36',
-        HTML: 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
-        JSON: 'application/json;charset=utf-8',
-        URL_ENCODE: 'application/x-www-form-urlencoded; charset=utf-8'
+const { request } = require('https');
+const { stringify } = require('querystring');
+/**
+ * 简化nodejs发送http请求的步骤
+ * @param {
+        {
+            type: string;
+            _url: string;
+            _query_string: object;
+            contents: object;
+            headers: object;
+            success: (chunk: {
+                header: object;
+                body: string;
+            }) => {};
+            error: (err: string)=>{};
+        }
+    } obj
+ */
+exports.HttpRequest = obj => {
+    const type = obj.type;
+    const _url = obj._url;
+    const headers = obj.headers;
+    const _query_string = obj._query_string;
+    const contents = formatContents(headers['Content-Type'],obj.contents);
+    if (!/^([hH][tT]{2}[pP]:\/\/|[hH][tT]{2}[pP][sS]:\/\/)(([A-Za-z0-9-~]+).)+([A-Za-z0-9-~/])+$/.test(_url)) {
+        console.log('url无效');
+        return;
+    }
+    /**
+     * 处理options
+     */
+    let options = {
+        host: /(?<=https?:\/\/)[a-zA-Z.]*(?=\/)/.exec(_url)[0],
+        path: /(?<=https?:\/\/.*)\/.*/.exec(_url)[0],
+        headers: headers,
     };
-const API = {
-    /**
-     * 初始化登录信息
-     * @returns {Promise<string>}
-     */
-    initSignIn() {
-        return new Promise((resolve, reject) => {
-            HttpRequest({
-                type: 'GET',
-                _url: LOGIN_PAGE,
-                headers: {
-                    Referer: YQFK_HOST,
-                    'User-Agent': Headers.CHROME,
-                    Accept: Headers.HTML,
-                },
-                success: chunk => {
-                    const _Cookies = chunk.header['set-cookie'];
-                    let _Cookie = [];
-                    _Cookies.forEach(cookie => {
-                        _Cookie.push(cookie.split('; ')[0]);
-                    });
-                    Cookie += _Cookie.join('; ');
-                    const token = /(?<=token\s*=\s*")\S*(?=")/.exec(chunk.body);
-                    if (token === null) reject();
-                    __token__ = token[0];
-                    resolve('初始化成功')
-                },
-                error: err => {
-                    reject(`未初始化成功\n\n${err}`);
-                }
-            })
-        })
-    },
-    /**
-     * 成功登录跳转链接
-     * @param {string} username
-     * @param {string} password
-     * @returns {Promise<string>}
-     */
-    getLink(username, password) {
-        return new Promise((resolve, reject) => {
-            HttpRequest({
-                type: 'POST',
-                _url: LOGIN_PAGE,
-                contents: {
-                    username,
-                    password,
-                    __token__,
-                    wechat_verify: ''
-                },
-                headers: {
-                    'User-Agent': Headers.CHROME,
-                    Referer: LOGIN_PAGE,
-                    Origin: CAS_HOST,
-                    Accept: Headers.JSON,
-                    'Content-Type': Headers.URL_ENCODE,
-                    Cookie,
-                },
-                success: chunk => {
-                    const data = JSON.parse(chunk.body);
-                    if (data.code === 1) {
-                        resolve(data.info)
-                    } else {
-                        reject('未登陆成功')
-                    }
-                },
-                error: err => {
-                    reject(`未登陆成功\n\n${err}`)
-                }
-            })
-        });
-    },
-    /**
-     * 设置授权信息
-     * @param {string} link
-     * @returns {Promise<string>}
-     */
-    setAuthorization(link) {
-        return new Promise((resolve, reject) => {
-            HttpRequest({
-                type: 'GET',
-                _url: link,
-                headers: {
-                    'User-Agent': Headers.CHROME,
-                    Referer: CAS_HOST,
-                    Accept: Headers.HTML,
-                },
-                success: chunk => {
-                    const location = chunk.header['location'];
-                    const access_token = /(?<=_token=)\S*$/.exec(location);
-                    if (access_token === null) {
-                        reject('未获取到access_token')
-                    } else {
-                        authorization += access_token[0];
-                        resolve(`成功获取到access_token`)
-                    }
-                },
-                error: err => {
-                    reject(`未获取到access_token\n\n${err}`)
-                }
-            })
-        });
-    },
-    /**
-     * 获取基础信息
-     * @returns {Promise<JSON>}
-     */
-    getBaseInfo() {
-        return new Promise((resolve, reject) => {
-            HttpRequest({
-                type: 'GET',
-                _url: YQFK_HOST + '/home/base_info/getBaseInfo',
-                headers: {
-                    Referer: YQFK_HOST + '/main',
-                    'User-Agent': Headers.CHROME,
-                    Accept: Headers.JSON,
-                    Cookie,
-                    authorization,
-                },
-                success: chunk => {
-                    const res = JSON.parse(chunk.body);
-                    if (res.code === 200) {
-                        resolve(res.info);
-                    } else {
-                        reject(`获取基本信息失败\n\n${res}`);
-                    }
-                },
-                error: err => {
-                    reject(`获取基本信息失败\n\n${err}`)
-                }
-            })
-        });
-    },
-    /**
-     * 提交信息
-     * @param {{[key: string]: any}} info
-     * @returns {Promise<void>}
-     */
-    submit(info) {
-        return new Promise((resolve, reject) => {
-            HttpRequest({
-                type: 'POST',
-                _url: YQFK_HOST + '/home/base_info/addBaseInfo',
-                contents: info,
-                headers: {
-                    Referer: YQFK_HOST + '/main',
-                    Origin: YQFK_HOST,
-                    'User-Agent': Headers.CHROME,
-                    Accept: Headers.JSON,
-                    'Content-Type': Headers.JSON,
-                    Cookie,
-                    authorization,
-                },
-                success: chunk => {
-                    const res = JSON.parse(chunk.body);
-                    if (res.code === 200) {
-                        resolve(res.message)
-                    } else {
-                        reject(res.message)
-                    }
-                },
-                error: err => {
-                    reject(`提交失败\n\n${err}`)
-                }
-            })
-        });
-    },
-    /**
-     * Server酱推送
-     * @param {string} text 
-     * @param {string} desp
-     * @return {Promise<string>}
-     */
-    sendToMe(text, desp) {
-        if (!SCKEY) return Promise.reject('未在环境变量里设置SCKEY, 取消Server酱推送')
-        return new Promise((resolve, reject) => {
-            HttpRequest({
-                type: 'GET',
-                _url: `https://sc.ftqq.com/${SCKEY}.send`,
-                _query_string: {
-                    text,
-                    desp
-                },
-                headers: {
-                    'User-Agent': Headers.CHROME,
-                    Accept: Headers.JSON,
-                },
-                success: chunk => {
-                    const res = JSON.parse(chunk.body);
-                    if (res.errno === 0) {
-                        resolve('Server酱推送成功')
-                    } else {
-                        reject('Server酱推送失败')
-                    }
-                },
-                error: err => {
-                    reject(`Server酱推送失败\n\n${err}`)
-                }
-            })
-        });
-    }
-};
-const fn = {
-    /**
-     * 获取要发送的信息
-     * @param {JSON} baseinfo
-     * @returns {Promise<{}>}
-     */
-    filterSendInfo(baseinfo) {
-        return new Promise((resolve, reject) => {
-            readFile('Keys.json', (err, data) => {
-                if (err) {
-                    reject('打开文件失败');
-                } else {
-                    let sendinfo = {};
-                    const { keys } = JSON.parse(data);
-                    keys.forEach(key => {
-                        const value = baseinfo[key];
-                        if (typeof value === 'undefined') {
-                            if (key === "confirm") {
-                                sendinfo[key] = 1;
-                            } else {
-                                reject(`缺少键${key}`);
-                                return;
-                            }
-                        } else if (value instanceof Array && value.length === 0) {
-                            sendinfo[key] = null;
-                        } else {
-                            sendinfo[key] = value;
-                        }
-                    });
-                    resolve(sendinfo)
-                }
-            })
-        });
-    },
-    /**
-     * 转换为Server酱所需正文格式
-     * @param {string} text
-     * @returns {string}
-     */
-    toMarkDown(text) {
-        console.log(text);
-        return text + '\n\n'
-    },
-    /**
-     * 隐私化
-     * @param {string} text
-     */
-    hideSecret(text) {
-        return text//.split('').map((it, n) => n % 2 ? '*' : it).join('')
-    }
-};
-(() => {
-    let desp = '';
-    const md = fn.toMarkDown;
-    desp += md('开始自动登录');
-    API.initSignIn()
-        .then(data => {
-            desp += md(data);
-            desp += md(`成功获取到Cookie:\n\n\`${fn.hideSecret(Cookie)}\``);
-            desp += md(`成功获取到token:\n\n\`${fn.hideSecret(__token__)}\``);
-            if (USERNAME && PASSWORD) {
-                return API.getLink(USERNAME, PASSWORD);
-            } else {
-                return Promise.reject('未在环境变量里设置USERNAME, PASSWORD')
+    let query_string = '';
+    switch (type) {
+        case 'get':
+        case 'GET':
+            options.method = 'GET';
+            if (typeof _query_string !== 'undefined') {
+                query_string = stringify(_query_string);
             }
-        })
-        .then(data => {
-            desp += md('登陆成功');
-            desp += md(`成功获取到跳转链接:\n\n\`${fn.hideSecret(data)}\``);
-            return API.setAuthorization(data);
-        })
-        .then(data => {
-            desp += md(data);
-            desp += md('设置授权头');
-            return API.getBaseInfo();
-        })
-        .then(data => {
-            desp += md('获取基本信息成功');
-            desp += md(data.msg);
-            return fn.filterSendInfo(data);
-        })
-        .then(data => {
-            desp += md('要发送的信息筛选完毕');
-            desp += md('提交健康日报表');
-            return API.submit(data);
-        })
-        .then(data => {
-            desp += md(data)
-            return Promise.resolve();
-        })
-        .then(() => {
-            return API.sendToMe('健康打卡ok', desp);
-        })
-        .catch(err => {
-            desp += fn.toMarkDown(err)
-            return API.sendToMe('健康打卡出错', desp);
-        })
-        .catch(err => {
-            console.log(err);
-        })
-})()
+            if (query_string != '') {
+                let url = _url + '?' + query_string;
+                options.path = /(?<=https?:\/\/.*)\/.*/.exec(url)[0];
+            }
+            break;
+        case 'post':
+        case 'POST':
+            options.method = 'POST';
+            options.headers['Content-Length'] = Buffer.byteLength(contents, 'utf-8');
+            if (typeof headers['Content-Type'] ==='undefined') {
+                options.headers['Content-Type'] = 'application/x-www-form-urlencoded; charset=utf-8';
+            }
+            break;
+        default:
+            console.log('请检查传入HttpRequest方法的对象中的type属性');
+            break;
+    }
+    /**
+     * 发送Http请求
+     */
+    const req = request(options, res => {
+        let protodata = '';
+        if (res.statusCode < 400) {
+            res.setEncoding('utf8');
+            res.on('data', chunk => {
+                protodata += chunk
+            })
+            res.on('end', () => {
+                obj.success({
+                    header: res.headers,
+                    body: protodata
+                })
+            })
+        } else {
+            console.log(`${res.statusCode} RESPEND ERROR!`);
+            obj.error(`网络错误`);
+        }
+    });
+    if (type === 'POST') {
+        req.write(contents)
+    }
+    req.on('error', (err) => {
+        console.error("REQUEST ERROR!")
+        obj.error(`请求失败${err}`);
+    });
+    req.end()
+}
+/**
+ * 处理请求体
+ * 默认url编码字符串
+ * @param {string} contentstype 请求的内容格式
+ * @param {object} contents 请求体
+ * @returns {string} 格式化字符串
+ */
+function formatContents(contentstype,contents) {
+    if (/application\/x-www-form-urlencoded/i.test(contentstype)) return stringify(contents)
+    if (/application\/json/i.test(contentstype)) return JSON.stringify(contents)
+    return '';
+}
