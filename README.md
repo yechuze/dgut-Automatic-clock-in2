@@ -3,7 +3,7 @@
 ## Fork 本仓库，收藏
 
 
-## 食用方法：
+## 食用方法
 
 
 - `Settings`-`Secrets`里面添加`USERNAME`,`PASSWORD`,`SCKEY`值对应为你的`学号（例如：202011111111）`,`密码`,`server酱的key（详情百度server酱）用于接收通知`
