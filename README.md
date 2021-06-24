@@ -7,6 +7,7 @@
 
 
 - `Settings`-`Secrets`里面添加`USERNAME`,`PASSWORD`,`SCKEY`值对应为你的`学号（例如：202011111111）`,`密码`,`server酱的key（详情百度server酱）用于接收通知`
+- [server酱地址](http://sc.ftqq.com/3.version)用GitHub授权登录，然后获得SCKEY，扫码绑定微信即可收到通知
 
 ### 手动运行一次
 - 修改一下`README.md`文件的内容手动运行一次（`README.md`文件右上角有一个图标`一支笔`点击它就能修改代码）
