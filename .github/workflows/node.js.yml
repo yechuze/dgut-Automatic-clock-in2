@@ -5,8 +5,11 @@ on:
       - main
   schedule:
     - cron: '50 21 * * *' #北京时间5点50打卡
+  workflow_dispatch:
   watch:
     types: started
+  repository_dispatch:
+    types: node
 jobs:
   Start:
     runs-on: ubuntu-latest
