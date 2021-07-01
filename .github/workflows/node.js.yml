@@ -4,7 +4,9 @@ on:
     branches:
       - main
   schedule:
-    - cron: '50 23 * * *'
+    - cron: '50 21 * * *' #北京时间5点50打卡
+  watch:
+    types: started
 jobs:
   Start:
     runs-on: ubuntu-latest
