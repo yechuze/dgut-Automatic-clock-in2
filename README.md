@@ -20,11 +20,14 @@
 - [server酱地址点击直达](http://sc.ftqq.com/3.version)用GitHub授权登录，然后获得SCKEY，扫码绑定微信即可收到通知
 
 ### 手动运行一次
-- 修改一下`README.md`文件的内容手动运行一次（`README.md`文件右上角有一个图标`一支笔`点击它就能修改代码）
+
+- 点击`Actions`=>`Enable workflows`=>查看workflows是否有两项分别为 “HealthyPunch” 和 “A🔄自动同步🔄A” 
+
+- 修改一下`README.md`文件的内容，然后就能自动运行一次（`README.md`文件右上角有一个图标`一支笔`点击它就能修改代码）
 
 ### 新增字段无法正常打卡（已使用自动同步，请删除原有仓库再fork本仓库）
 - 若要使用自动同步功能，请在`Secrets`处添加`PAT`如何申请PAT[点击这里](https://hub.fastgit.org/miranda0111/JDscret/blob/main/backup/reposync.md)
-- 请将`Keys.json`文件中的内容复制到自己的仓库中。
+- 若不使用，请将`Keys.json`文件中的内容复制到自己的仓库中。
 
 ### 其他
 
