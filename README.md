@@ -21,7 +21,7 @@
 
 ### 手动运行一次
 
-- 点击`Actions`=>`Enable workflows`=>查看workflows是否有两项分别为 “HealthyPunch” 和 “A🔄自动同步🔄A” 
+- 点击`Actions`=>`Enable workflows`=>查看workflows是否有两项分别为 “HealthyPunch” 和 “A🔄自动同步🔄A” 点击第一行，在右边找到run workflows即可[点击查看图片](https://i0.hdslb.com/bfs/im/9ef3ec53fee6de95c4a1273056690d8b97fe9c50.png)
 
 - 修改一下`README.md`文件的内容，然后就能自动运行一次（`README.md`文件右上角有一个图标`一支笔`点击它就能修改代码）
 
