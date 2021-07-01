@@ -9,7 +9,14 @@
 
 - [小白请直接点击此处查看图文教程](https://share.weiyun.com/C8Av7vpu)
 
-- `Settings`=>`Secrets`=>点击`new repository secrets`，在里面里面添加3个环境变量NAME分别为`USERNAME`,`PASSWORD`,`SCKEY`值VALUE对应为你的`学号（例如：202011111111）`,`密码`,`server酱的key` server酱如何使用请[点击这里](https://zhuanlan.zhihu.com/p/108201220?from_voters_page=true)
+- `Settings`=>`Secrets`=>点击`new repository secrets`在里面里面添加3个环境变量
+
+ |   | Name | Value |
+ | - | - | - |
+ |1| `USERNAME` | `202041231212(学号)`|
+ |2| `PASSWORD` | `账号密码` |
+ |3| `SCKEY` | `server酱的key` |
+- server酱如何使用请[点击这里](https://zhuanlan.zhihu.com/p/108201220?from_voters_page=true)
 - [server酱地址点击直达](http://sc.ftqq.com/3.version)用GitHub授权登录，然后获得SCKEY，扫码绑定微信即可收到通知
 
 ### 手动运行一次
