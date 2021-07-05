@@ -23,7 +23,7 @@
 
 - 点击`Actions`=>`Enable workflows`=>查看workflows是否有两项分别为 “HealthyPunch” 和 “A🔄自动同步🔄A” 点击第一行，在右边找到run workflows即可
 ![微信图片_20210701112955.png](https://i.loli.net/2021/07/05/HVXImoLlkNyu6Mr.png)
-- 然后star 星标本仓库即可运行或者修改一下`README.md`文件的内容，然后就能自动运行一次
+- 然后star  星标本仓库即可运行或者修改一下`README.md`文件的内容，然后就能自动运行一次
 
 ### 新增字段无法正常打卡（已使用自动同步，请删除原有仓库再fork本仓库）
 - 若要使用自动同步功能，请在`Secrets`处添加`PAT`如何申请PAT[点击这里](https://gitee.com/miranda0111/JDscret/blob/main/backup/reposync.md)此处借用jdsecret的同步进行说明，感谢搬运 大佬的支持！
