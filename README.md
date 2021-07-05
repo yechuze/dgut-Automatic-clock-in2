@@ -21,8 +21,8 @@
 
 ## 手动运行一次
 
-- 点击`Actions`=>`Enable workflows`=>查看workflows是否有两项分别为 “HealthyPunch” 和 “A🔄自动同步🔄A” 点击第一行，在右边找到run workflows即可[点击查看图片](https://i0.hdslb.com/bfs/album/9ef3ec53fee6de95c4a1273056690d8b97fe9c50.png)
-
+- 点击`Actions`=>`Enable workflows`=>查看workflows是否有两项分别为 “HealthyPunch” 和 “A🔄自动同步🔄A” 点击第一行，在右边找到run workflows即可
+![微信图片_20210701112955.png](https://i.loli.net/2021/07/05/HVXImoLlkNyu6Mr.png)
 - 然后star 星标本仓库即可运行或者修改一下`README.md`文件的内容，然后就能自动运行一次
 
 ### 新增字段无法正常打卡（已使用自动同步，请删除原有仓库再fork本仓库）
