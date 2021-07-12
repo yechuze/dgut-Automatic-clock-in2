@@ -9,9 +9,9 @@
  <p align="center">利用GitHub actions实现每日自动签到</p>
 </p>
   <p align="center">
-    <a href="https://github.com/mimiranda0111/covid19-2021/blob/master/LICENSE"><img alt="GitHub" src="https://img.shields.io/github/license/lan-tianxiang/js_tool.svg?label=License&style=for-the-badge"></a>
-    <a href="https://github.com/mimiranda0111/covid19-2021/stargazers"><img alt="GitHub" src="https://img.shields.io/github/stars/lan-tianxiang/js_tool.svg?label=Stars&style=for-the-badge"></a>
-    <br />
+    <a href="https://github.com/mimiranda0111/covid19-2021/blob/master/LICENSE"><img alt="GitHub" src="https://img.shields.io/github/license/mimiranda0111/covid19-2021 .svg?label=License&style=for-the-badge"></a>
+    <a href="https://github.com/mimiranda0111/covid19-2021/stargazers"><img alt="GitHub" src="https://img.shields.io/github/stars/mimiranda0111/covid19-2021 .svg?label=Stars&style=for-the-badge"></a>
+ <br />
   </p>
 
 
