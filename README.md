@@ -14,7 +14,7 @@
 <h3 align="center">默默关注也是鼓励的话，希望你能在右上角给颗⭐！你的支持是我最大的动力😎！</h3>
 
 
-#### 免责申明
+### 免责申明
     
 该项目仅供学习使用，严禁用于商业用途，由此造成的一切后果，本人概不负责。
 #### 食用方法
@@ -35,7 +35,7 @@
 - server酱如何使用请[点击这里](https://zhuanlan.zhihu.com/p/108201220?from_voters_page=true)，[server酱地址点击直达](http://sc.ftqq.com/3.version)用GitHub授权登录，然后获得SCKEY，扫码绑定微信即可收到通知，或者使用[server酱turbo版](https://sct.ftqq.com/)，进入后点击[消息通道](https://sct.ftqq.com/forward)进行配置，推荐使用微信企业来进行通知。
 - 通知可以不使用，等班干过来跟你讲。
 
-#### 手动运行一次
+### 手动运行一次
 
 - 点击`Actions`=>`Enable workflows`=>查看workflows是否有两项分别为 “HealthyPunch” 和 “A🔄自动同步🔄A” 点击第一行，在右边找到run workflows即可
 ![微信图片_20210701112955.png](https://i.loli.net/2021/07/05/HVXImoLlkNyu6Mr.png)
@@ -45,7 +45,7 @@
 - 若要使用自动同步功能，请在`Secrets`处添加`PAT`如何申请PAT[点击这里](https://gitee.com/miranda0111/JDscret/blob/main/backup/reposync.md)此处借用jdsecret的同步进行说明，感谢搬运 大佬的支持！
 - 若不使用，请将`Keys.json`文件中的内容复制到自己的仓库中（最笨的方法）。
 
-#### 其他
+### 其他
 
 - 不懂得使用请加q:[591944012](https://im.qq.com/index)
 
