@@ -9,7 +9,9 @@
     <a href="https://github.com/mimiranda0111/covid19-2021/stargazers"><img alt="GitHub" src="https://img.shields.io/github/stars/mimiranda0111/covid19-2021 .svg?label=Stars&style=for-the-badge"></a>
  <br />
   </p>
-
+<p align="center">喜欢这个项目？请考虑<a href="">捐赠❤</a>来帮助它完善！
+<br />
+<h3 align="center">当然，觉得默默关注也是鼓励的话，也可以在右上角给颗⭐！你的支持是我最大的动力😎！</h3>
 
 ## 注册GitHub账号，然后右上角Fork 本仓库&star收藏
 
