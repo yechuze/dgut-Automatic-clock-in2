@@ -2,6 +2,20 @@
 
 ## 教程对新手极度不友好
 
+
+<p align="center">
+ <img width="200px" src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fp5.itc.cn%2Fimages01%2F20201014%2Ffb376ec29d454cd998a2a250d8668e2e.png" align="center" alt="GitHub Readme Stats" />
+ <h2 align="center">东莞理工学院疫情打卡脚本</h2>
+ <p align="center">利用GitHub actions实现每日自动签到</p>
+</p>
+  <p align="center">
+    <a href="https://github.com/mimiranda0111/covid19-2021/blob/master/LICENSE"><img alt="GitHub" src="https://img.shields.io/github/license/lan-tianxiang/js_tool.svg?label=License&style=for-the-badge"></a>
+    <a href="https://github.com/mimiranda0111/covid19-2021/issues"><img alt="Issues" src="https://img.shields.io/github/issues/lan-tianxiang/js_tool?color=0088ff&style=for-the-badge" /></a>
+    <a href="https://github.com/mimiranda0111/covid19-2021/stargazers"><img alt="GitHub" src="https://img.shields.io/github/stars/lan-tianxiang/js_tool.svg?label=Stars&style=for-the-badge"></a>
+    <br />
+  </p>
+
+
 ## 注册GitHub账号，然后右上角Fork 本仓库&star收藏
 
 
@@ -18,6 +32,8 @@
  |3| `SCKEY` | server酱的key |
 - server酱如何使用请[点击这里](https://zhuanlan.zhihu.com/p/108201220?from_voters_page=true)
 - [server酱地址点击直达](http://sc.ftqq.com/3.version)用GitHub授权登录，然后获得SCKEY，扫码绑定微信即可收到通知
+- [server酱turbo版](https://sct.ftqq.com/)，进入后点击[消息通道](https://sct.ftqq.com/forward)进行配置，推荐使用微信企业来进行通知。
+- 通知可以不使用，等班干过来跟你讲。
 
 ## 手动运行一次
 
