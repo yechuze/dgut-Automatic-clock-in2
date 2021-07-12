@@ -4,7 +4,6 @@
 
 
 <p align="center">
- <img width="200px" src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fp5.itc.cn%2Fimages01%2F20201014%2Ffb376ec29d454cd998a2a250d8668e2e.png" align="center" alt="GitHub Readme Stats" />
  <h2 align="center">东莞理工学院疫情打卡脚本</h2>
  <p align="center">利用GitHub actions实现每日自动签到</p>
 </p>
