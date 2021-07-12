@@ -1,6 +1,6 @@
 
 <p align="center">
- <h2 align="center">东莞理工学院疫情打卡脚本</h2>
+ <h3 align="center">东莞理工学院疫情打卡脚本</h3>
  <p align="center">利用GitHub actions实现每日自动签到，教程对新手极度不友好</p>
 </p>
   <p align="center">
