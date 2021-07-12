@@ -4,7 +4,7 @@
  <p align="center">利用GitHub actions实现每日自动签到，教程对新手极度不友好</p>
 </p>
   <p align="center">
-  <a href="https://github.com/mimiranda0111/covid19-2021/watchers"><img alt="Issues" src="https://img.shields.io/github/github/watchers/mimiranda0111/covid19-2021?color=0088ff&style=for-the-badge" /></a>
+  <a href="https://github.com/mimiranda0111/covid19-2021/watchers"><img alt="Watchers" src="https://img.shields.io/github/github/watchers/mimiranda0111/covid19-2021?color=0088ff&style=for-the-badge" /></a>
  <a href="https://github.com/mimiranda0111/covid19-2021/issues"><img alt="Issues" src="https://img.shields.io/github/issues/mimiranda0111/covid19-2021?color=0088ff&style=for-the-badge" /></a>
     <a href="https://github.com/mimiranda0111/covid19-2021/stargazers"><img alt="GitHub" src="https://img.shields.io/github/stars/mimiranda0111/covid19-2021.svg?label=Stars&style=for-the-badge"></a>
     <a href="https://github.com/mimiranda0111/covid19-2021/network/members"><img alt="GitHub" src="https://img.shields.io/github/forks/mimiranda0111/covid19-2021.svg?label=Fork&style=for-the-badge"></a>
