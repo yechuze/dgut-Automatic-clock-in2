@@ -7,7 +7,7 @@
     <a href="https://github.com/mimiranda0111/covid19-2021/blob/master/LICENSE"><img alt="GitHub" src="https://img.shields.io/github/license/mimiranda0111/covid19-2021.svg?label=License&style=for-the-badge"></a>
  <a href="https://github.com/mimiranda0111/covid19-2021/issues"><img alt="Issues" src="https://img.shields.io/github/issues/mimiranda0111/covid19-2021?color=0088ff&style=for-the-badge" /></a>
     <a href="https://github.com/mimiranda0111/covid19-2021/stargazers"><img alt="GitHub" src="https://img.shields.io/github/stars/mimiranda0111/covid19-2021.svg?label=Stars&style=for-the-badge"></a>
-    <a href="https://github.com/mimiranda0111/covid19-2021/stargazers"><img alt="GitHub" src="https://badgen.net/github/forks/mimiranda0111/covid19-2021.svg?label=Fork&style=for-the-badge"></a>
+    <a href="https://github.com/mimiranda0111/covid19-2021/stargazers"><img alt="GitHub" src="https://img.shields.io/github/forks/mimiranda0111/covid19-2021.svg?label=Fork&style=for-the-badge"></a>
  <br />
   </p>
 <p align="center">感谢你的<a href="">捐赠❤</a>来帮助它完善！
