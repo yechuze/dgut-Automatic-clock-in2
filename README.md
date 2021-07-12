@@ -4,8 +4,8 @@
  <p align="center">利用GitHub actions实现每日自动签到，教程对新手极度不友好</p>
 </p>
   <p align="center">
-  <a href="https://github.com/mimiranda0111/covid19-2021/watchers"><img alt="Watchers" src="https://badgen.net/github/watchers/mimiranda0111/covid19-2021?color=0088ff&style=for-the-badge" /></a>
- <a href="https://github.com/mimiranda0111/covid19-2021/issues"><img alt="Issues" src="https://badgen.net/github/issues/mimiranda0111/covid19-2021?color=0088ff&style=for-the-badge" /></a>
+  <a href="https://github.com/mimiranda0111/covid19-2021/watchers"><img alt="GitHub" src="https://badgen.net/github/watchers/mimiranda0111/covid19-2021?label=Watchers&color=0088ff&style=for-the-badge" /></a>
+ <a href="https://github.com/mimiranda0111/covid19-2021/issues"><img alt="GitHub" src="https://badgen.net/github/issues/mimiranda0111/covid19-2021?label=Issue&color=0088ff&style=for-the-badge" /></a>
     <a href="https://github.com/mimiranda0111/covid19-2021/stargazers"><img alt="GitHub" src="https://badgen.net/github/stars/mimiranda0111/covid19-2021?label=Stars&style=for-the-badge"></a>
     <a href="https://github.com/mimiranda0111/covid19-2021/network/members"><img alt="GitHub" src="https://badgen.net/github/forks/mimiranda0111/covid19-2021?label=Fork&style=for-the-badge"></a>
  <br />
