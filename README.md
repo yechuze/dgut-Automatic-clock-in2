@@ -1,7 +1,3 @@
-# dgut疫情打卡脚本
-
-## 教程对新手极度不友好
-
 
 <p align="center">
  <h2 align="center">东莞理工学院疫情打卡脚本</h2>
