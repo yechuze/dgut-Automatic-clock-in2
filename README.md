@@ -5,7 +5,7 @@
 
 <p align="center">
  <h2 align="center">东莞理工学院疫情打卡脚本</h2>
- <p align="center">利用GitHub actions实现每日自动签到</p>
+ <p align="center">利用GitHub actions实现每日自动签到，教程对新手极度不友好</p>
 </p>
   <p align="center">
     <a href="https://github.com/mimiranda0111/covid19-2021/blob/master/LICENSE"><img alt="GitHub" src="https://img.shields.io/github/license/mimiranda0111/covid19-2021 .svg?label=License&style=for-the-badge"></a>
