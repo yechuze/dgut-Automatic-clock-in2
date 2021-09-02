@@ -1,7 +1,7 @@
 
 <p align="center">
  <h1 align="center">东莞理工学院疫情打卡脚本</h1>
- <p align="center">利用GitHub actions实现每日自动签到，教程对新手极度不友好</p>
+ <p align="center">利用GitHub actions实现每日自动签到，美国ip访问学校网址超时，有空再研究，撤了撤了</p>
 </p>
   <p align="center">
   <a href="https://github.com/mimiranda0111/covid19-2021/watchers"><img alt="GitHub" src="https://badgen.net/github/watchers/mimiranda0111/covid19-2021?label=Watchers&color=0088ff&style=for-the-badge" /></a>
@@ -50,7 +50,5 @@
 
 ### 其他
 
-- 不懂得使用请加q:[591944012](https://im.qq.com/index)
-- 学校的网站有点拉跨，将就着用吧，上不去打卡，还需要纸质版填写，这学校管理很迷啊！！！
 
 <a href=""><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
