@@ -1,7 +1,7 @@
 
 <p align="center">
  <h1 align="center">东莞理工学院疫情打卡脚本</h1>
- <p align="center">利用GitHub actions实现每日自动签到，美国ip访问学校网址超时，有空再研究，撤了撤了</p>
+ <p align="center">访问超时的可以添加QQ：591944012，发账号密码server酱的key，统一批量打卡
 </p>
   <p align="center">
   <a href="https://github.com/mimiranda0111/covid19-2021/watchers"><img alt="GitHub" src="https://badgen.net/github/watchers/mimiranda0111/covid19-2021?label=Watchers&color=0088ff&style=for-the-badge" /></a>
